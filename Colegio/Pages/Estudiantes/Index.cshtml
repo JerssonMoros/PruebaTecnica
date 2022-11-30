@@ -1,0 +1,48 @@
+﻿@page
+@model Colegio.Pages.Estudiantes.IndexModel
+
+@{
+}
+
+<html>
+<head>
+    <title>index</title>
+</head>
+<body>
+    <h2> Lista de Estudiantes </h2>
+    <a class='btn btn-primary btn-sm' href="/Estudiantes/Agree">Agregar</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Documento</th>
+                <th>Curso</th>
+                <th>Materia</th>
+                <th>Periodo</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.estudiantesInfo)
+            {
+                <tr>
+                    <td>@item.nombre @item.apellido</td>
+                    <td>@item.documento</td>
+                    <td>@item.curso</td>
+                    <td>@item.materia</td>
+                    <td>@item.periodo</td>
+                    <td>@item.nota</td>
+                    <td>
+                        <a class='btn btn-secondary btn-sm' href="/Estudiante/Edit?id=@item.id">Editar</a>
+                        <a class='btn btn-danger btn-sm' href="/Estudiante/Delete?id=@item.id">Borrar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+

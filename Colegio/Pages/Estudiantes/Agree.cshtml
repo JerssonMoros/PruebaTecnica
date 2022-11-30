@@ -1,0 +1,81 @@
+﻿@page
+@model Colegio.Pages.Estudiantes.CreateModel
+@{
+}
+
+<br>
+<h2>Nuevo Estudiante</h2>    
+
+@if (Model.error.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.error</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+    <form method="post">
+        <div class="row mb-2">
+            <label class="col-sm-3 col-form-label">Nombre</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="name" value="@Model.estudianteInfo.nombre" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Apellido</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="last_name" value="@Model.estudianteInfo.apellido" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Documento</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="document" value="@Model.estudianteInfo.documento" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Curso</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="curse" value="@Model.estudianteInfo.curso" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Materia</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="matter" value="@Model.estudianteInfo.materia" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Periodo</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="period" value="@Model.estudianteInfo.periodo" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Nota</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="note" value="@Model.estudianteInfo.nota" />
+            </div>
+        </div>
+
+        @if (Model.guardado.Length > 0)
+        {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.guardado</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        }
+
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/" role="button">Cancelar</a>
+            </div>
+        </div>
+    </form>
